@@ -5,6 +5,10 @@ class baseserver {
 }
 
 class webserver {
+
+  file { "/home/web":
+    ensure => directory,
+  }
 }
 
 class dbserver {
