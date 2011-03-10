@@ -30,4 +30,8 @@ class webserver {
 }
 
 class dbserver {
+  postgresql { "standard":
+    listen_address => "74.207.233.129",
+    allowed_ips => ["74.207.233.12", "74.207.233.124"],
+  }
 }
