@@ -6,7 +6,9 @@ class baseserver {
 
 class webserver {
 
-  file { "/home/web":
+  $root = "/home/web"
+
+  file { $root:
     ensure => directory,
   }
 
@@ -25,6 +27,8 @@ class webserver {
   }
 
   include virtualenv
+
+  virtualenv::environment { "$root/myblog": }
 }
 
 class dbserver {

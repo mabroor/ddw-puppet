@@ -4,3 +4,13 @@ class virtualenv {
     require => Package["python-setuptools"],
   }
 }
+
+define virtualenv::environment($user="root", $group="root") {
+
+  exec { "virtualenv $name":
+    command => "virtualenv ${name}",
+    user => $user,
+    group => $group,
+    creates => $name,
+  }
+}
