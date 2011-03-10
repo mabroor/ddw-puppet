@@ -78,6 +78,30 @@ worry, we'll fix this by adding our Puppet configuration to the Puppet master:
     invoke-rc.d puppetmaster restart
 
 
+Configuring our servers with Puppet
+-----------------------------------
+
+The Puppet configuration cloned at the end of the bootstrap is specific
+to my setup on Linode and you'll have to change the hostsnames and
+ip addresses to ones matching your environment.
+
+On Ubuntu the Puppet client daemons don't get started by default. This is
+perfectly fine for this exercise so we'll just run them manually on all
+three servers:
+
+    puppetd --test
+
+If all goes well you should have two web hosts and one database host running.
+
+**At this time the configuration is incomplete.** The current configuration
+is just what I managed to write during the tutorial. The following items
+remains to be implemented (watch this space):
+
+* Postgresql users and database for Mingus.
+* Configuring Mingus to use our Postgresql database.
+* Apache with mod_wsgi.
+* Load balancing with Nginx.
+
 
 
 [jkm]: http://jacobian.org/
