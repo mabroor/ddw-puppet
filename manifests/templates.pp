@@ -23,6 +23,8 @@ class webserver {
   package { $webpackages:
     ensure => present,
   }
+
+  include virtualenv
 }
 
 class dbserver {
