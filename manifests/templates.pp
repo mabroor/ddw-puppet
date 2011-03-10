@@ -3,3 +3,9 @@ class baseserver {
     ensure => present,
   }
 }
+
+class webserver {
+}
+
+class dbserver {
+}
