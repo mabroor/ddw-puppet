@@ -9,6 +9,20 @@ class webserver {
   file { "/home/web":
     ensure => directory,
   }
+
+  $webpackages = [
+    "python-dev",
+    "python-setuptools",
+    "postgresql-client",
+    "build-essential",
+    "libpq-dev",
+    "subversion",
+    "mercurial",
+  ]
+
+  package { $webpackages:
+    ensure => present,
+  }
 }
 
 class dbserver {
