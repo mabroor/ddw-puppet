@@ -29,4 +29,8 @@ class mingus {
     unless => "/bin/sh -c '[ -f $blog_venv/MINGUS_REQUIREMENTS_INSTALLED ]'",
     require => [Exec["mingus-src"], Exec["update-pip"], File[$mingus_requirements]],
   }
+
+  file { "$mingus_root/mingus/local_settings.py":
+    content => template("mingus/local_settings.py.erb"),
+  }
 }

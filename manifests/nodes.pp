@@ -4,11 +4,15 @@ node basenode {
 
 node "web1.uggedal.com" inherits basenode {
   include webserver
+
+  $database_host = "74.207.233.129"
   include mingus
 }
 
 node "web2.uggedal.com" inherits basenode {
   include webserver
+
+  $database_host = "74.207.233.129"
   include mingus
 }
 
