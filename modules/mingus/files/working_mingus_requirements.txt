@@ -2,7 +2,7 @@
 psycopg2==2.4
 
 # Working versions:
--e git://github.com/jezdez/django-staticfiles.git@07022ccaf08da5b9d552#egg=staticfiles
+-e git://github.com/jezdez/django-staticfiles.git@9640215ef8a65568e4b6#egg=staticfiles
 sorl-thumbnail==11.01
 
 BeautifulSoup>=3.0.8
