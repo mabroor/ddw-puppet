@@ -1,3 +1,10 @@
+# Needed for Postgresql connectivity:
+psycopg2==2.5
+
+# Working versions:
+-e git://github.com/jezdez/django-staticfiles.git@07022ccaf08da5b9d552#egg=staticfiles
+sorl-thumbnail==11.01
+
 BeautifulSoup>=3.0.8
 PIL
 python-dateutil==1.4.1
@@ -12,8 +19,6 @@ django-robots==0.6.1
 django-dbtemplates==0.6.1
 django-markup==0.3
 django-memcache-status==1.0.1
-django-staticfiles==1.0rc1
-sorl-thumbnail==11.01
 	
 -e git://github.com/django-extensions/django-extensions.git@459276ded0edf1d1cf6d94b4865891a281445b95#egg=django_extensions-0.4.2_pre-py2.5-dev
 -e git://github.com/montylounge/django-basic-apps.git@72ad0a50a464d3dd296a566f749e86b1f9080bac#egg=django_basic_apps-0.6-py2.5-dev
