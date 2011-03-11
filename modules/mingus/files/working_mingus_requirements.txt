@@ -1,5 +1,5 @@
 # Needed for Postgresql connectivity:
-psycopg2==2.5
+psycopg2==2.4
 
 # Working versions:
 -e git://github.com/jezdez/django-staticfiles.git@07022ccaf08da5b9d552#egg=staticfiles
