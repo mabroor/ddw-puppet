@@ -49,7 +49,7 @@ define postgresql::database($owner, $ensure=present) {
       unless => $userexists,
     }
 
-  } elsif $ensure == 'absent' {
+  } else {
 
     exec { "dropdb $name":
       command => "dropdb $name",
