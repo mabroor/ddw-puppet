@@ -6,12 +6,6 @@ class baseserver {
 
 class webserver {
 
-  $root = "/home/web"
-
-  file { $root:
-    ensure => directory,
-  }
-
   $webpackages = [
     "python-dev",
     "python-setuptools",
@@ -20,6 +14,8 @@ class webserver {
     "libpq-dev",
     "subversion",
     "mercurial",
+    "apache2",
+    "libapache2-mod-wsgi",
   ]
 
   package { $webpackages:
