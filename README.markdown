@@ -83,7 +83,10 @@ Configuring our servers with Puppet
 
 The Puppet configuration cloned at the end of the bootstrap is specific
 to my setup on Linode and you'll have to change the hostsnames and
-ip addresses to ones matching your environment.
+ip addresses to ones matching your environment in the Puppet configuration
+on the Puppet master:
+
+    vim /etc/puppet/manifests/nodes.pp
 
 On Ubuntu the Puppet client daemons don't get started by default. This is
 perfectly fine for this exercise so we'll just run them manually on all
@@ -93,13 +96,19 @@ three servers:
 
 If all goes well you should have two web hosts and one database host running.
 
+We'll manually create the initial database schema, create a Django superuser,
+and load test data from one of our web nodes:
+
+    cd /home/web/myblog/django-mingus/mingus
+    /home/web/myblog/bin/python manage.py syncdb
+    /home/web/myblog/bin/python manage.py loaddata test_data.json
+
+
+
 **At this time the configuration is incomplete.** The current configuration
 is just what I managed to write during the tutorial. The following items
 remains to be implemented (watch this space):
 
-* Postgresql users and database for Mingus.
-* Configuring Mingus to use our Postgresql database.
-* Apache with mod_wsgi.
 * Load balancing with Nginx.
 
 
