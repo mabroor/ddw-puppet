@@ -36,4 +36,14 @@ class mingus {
     content => template("mingus/local_settings.py.erb"),
     require => Exec["mingus-src"],
   }
+
+  file { "$blog_venv/mingus.wsgi":
+    source => "puppet:///modules/mingus/mingus.wsgi",
+  }
+
+  apache { "mingus":
+    listen_port => 8000,
+    wsgi_script_aliases => ["/ \"$blog_venv/mingus.wsgi\""],
+    require => [File["$blog_venv/mingus.wsgi"], File["$mingus_root/mingus/local_settings.py"]],
+  }
 }

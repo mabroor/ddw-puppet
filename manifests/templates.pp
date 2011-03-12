@@ -14,8 +14,6 @@ class webserver {
     "libpq-dev",
     "subversion",
     "mercurial",
-    "apache2",
-    "libapache2-mod-wsgi",
   ]
 
   package { $webpackages:
