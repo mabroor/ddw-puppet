@@ -109,7 +109,7 @@ and load test data from one of our web nodes:
 is just what I managed to write during the tutorial. The following items
 remains to be implemented (watch this space):
 
-* Load balancing with Nginx.
+* Static media files through Nginx.
 
 
 
